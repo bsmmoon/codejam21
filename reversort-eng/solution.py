@@ -1,5 +1,5 @@
 def solve(n, c):
-    if c not in range (n-1, int((n*(1+n))/2)): return "IMPOSSIBLE"
+    if c not in range (n-1, int((n*(1+n))/2)): return ["IMPOSSIBLE"]
 
     counts = []
     total = n-1  # all 1s initially
@@ -25,9 +25,16 @@ def verify(n, arr):
         count += j+1 - i + 1
     return count
 
+import functools
+
 t = int(input())
 for i in range(1, t+1):
     n, c = input().split()
     n, c = int(n), int(c)
     solution = solve(n, c)
-    print('Case #{}: {} ({}, {})'.format(i, solution, c, verify(n, solution)))
+    print('Case #{}: {}'.format(
+        i,
+        functools.reduce(lambda a, b: "{} {}".format(a, b), solution + [""]).strip(),
+        # c,
+        # verify(n, solution)
+    ))
