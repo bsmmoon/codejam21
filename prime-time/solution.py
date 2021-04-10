@@ -21,12 +21,13 @@ class Solver:
             self.perm(cards, index+1, summ, product * cards[index]): return True
         return False
 
-t = int(input())
+import sys
+t = int(sys.stdin.readline())
 for i in range(1, t+1):
-    m = int(input())
+    m = int(sys.stdin.readline())
     cards = []
     for _ in range(m):
-        c, n = input().split(" ")
+        c, n = sys.stdin.readline().split(" ")
         cards.append((int(c), int(n)))
     
     print('Case #{}: {}'.format(i, solve(cards)))
