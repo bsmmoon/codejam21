@@ -22,6 +22,8 @@ class Solver:
         return False
 
 import sys
+
+solver = Solver()
 t = int(sys.stdin.readline())
 for i in range(1, t+1):
     m = int(sys.stdin.readline())
@@ -30,4 +32,4 @@ for i in range(1, t+1):
         c, n = sys.stdin.readline().split(" ")
         cards.append((int(c), int(n)))
     
-    print('Case #{}: {}'.format(i, solve(cards)))
+    print('Case #{}: {}'.format(i, solver.solve(cards)))
